@@ -1,0 +1,43 @@
+model:
+  type: CNNModel
+  params:
+    number_filter: 8
+    number_of_stocks: 5
+    seq_len: 60
+    number_feature: 82
+    drop: 0.1
+
+loss_function:
+  type: BCELoss
+  params: {}
+
+optimizer:
+  type: Adam
+  lr: 0.001
+  weight_decay: 128
+
+scheduler:
+  type: ReduceLROnPlateau
+  mode: min
+  factor: 0.5
+  patience: 20
+  threshold: 0.001
+  threshold_mode: rel
+  cooldown: 0
+  min_lr: 0.00001
+  eps: 1e-08
+  verbose: true
+
+preprocess:
+  dataset_path: ./Datasets/Model_data_raw.pkl
+  n_day_predict: 1
+  seq_len: 60
+  Val_first: False
+  Trim_end:    2007-01-03
+  Split_Date1: 2015-09-01
+  Split_Date2: 2016-01-04
+
+train: 
+  epoch: 400
+  batch_size: 128
+  num_workers: 4
