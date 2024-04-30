@@ -20,3 +20,7 @@ The following are the training and backtesting code for their respective model(E
 ./FinRLEnsembleDDPGWPRED.ipynb
 ./FinRLEnsemblePPO.ipynb
 ./FinRLEnsemblePPOPRED.ipynb
+
+
+FinRL CODE USED FROM https://github.com/AI4Finance-Foundation/FinRL
+SOME FUNCTIONS BORROW FROM: https://github.com/hoseinzadeehsan/CNNpred-Keras
